@@ -29,7 +29,10 @@ app.add_middleware(RateLimitMiddleware, requests_per_minute=100)  # Adjust the l
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://healthcare-frontend.onrender.com",
+        "http://localhost:3000"  # For local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
